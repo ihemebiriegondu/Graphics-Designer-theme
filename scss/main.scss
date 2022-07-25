@@ -1,0 +1,195 @@
+$primary: orangered;
+$box-shadow: .3rem .3rem 0.6rem rgba(black, .4);
+
+$nav-link-padding-y: 0;
+$nav-link-padding-x: 0;
+$nav-link-font-size: null;
+$nav-link-font-weight: null;
+$nav-link-hover-color: $primary;
+$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+$nav-tabs-border-color: $primary;
+$nav-tabs-border-width: 0;
+$nav-tabs-border-radius: 50rem;
+$nav-tabs-link-hover-border-color: transparent;
+$nav-tabs-link-active-color: white;
+$nav-tabs-link-active-bg: $primary;
+$nav-tabs-link-active-border-color: transparent;
+
+
+html {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: black;
+    color: white;
+}
+
+body:before {
+    content: "";
+    overflow-x: hidden;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    background: linear-gradient(orange, red);
+    transform: skew(-15deg);
+    transform-origin: bottom;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.mode-container {
+    position: absolute;
+    top: 2rem;
+    left: 2.5rem;
+}
+
+.mode-container div {
+    background-color: rgba($color: whitesmoke, $alpha: 0.3);
+    border-radius: 50%;
+}
+
+.img-div div {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.img-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.nav-items {
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.opennewbg {
+    animation: showNav 0.5s linear;
+    width: 100%;
+    background-color: $primary;
+}
+
+
+@keyframes showNav {
+    from {
+        background-color: transparent;
+        width: 0%;
+    }
+
+    to {
+        background-color: $primary;
+        width: 100%;
+    }
+}
+
+.closenewbg {
+    animation: hideNav 0.5s linear;
+    width: 0%;
+    background-color: transparent;
+}
+
+@keyframes hideNav {
+    from {
+        background-color: $primary;
+        width: 100%;
+    }
+
+    to {
+        background-color: transparent;
+        width: 0%;
+    }
+}
+
+.more {
+    width: 13.5rem;
+}
+
+.more a:hover {
+    animation: showMoreBg 0.5s linear;
+    background-color: $primary;
+}
+
+@keyframes showMoreBg {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: $primary;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    body:before {
+        content: "";
+        overflow-x: hidden;
+        position: static;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background: black;
+        transform: none;
+    }
+
+    .mode-container {
+        top: 1rem;
+        left: 1.5rem;
+    }
+
+    .intro-text {
+        height: 60%;
+    }
+
+    .img-div {
+        height: 16.375rem;
+        width: 16.375rem;
+        margin: 0 auto;
+    }
+
+    .img-div div {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .img-div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 576px) {
+    .img-div {
+        height: 13.875rem;
+        width: 13.875rem;
+        margin: 0 auto;
+    }
+}
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";

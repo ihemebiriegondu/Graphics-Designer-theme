@@ -61,6 +61,10 @@ body:before {
     border-radius: 50%;
 }
 
+.fixed-bottom {
+    background-color: rgb(60, 59, 59);
+}
+
 .img-div div {
     height: 100%;
     width: 100%;
@@ -140,6 +144,10 @@ body:before {
 
 
 @media (max-width: 992px) {
+    body, html {
+        height: 50rem;
+    }
+
     body:before {
         content: "";
         overflow-x: hidden;

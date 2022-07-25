@@ -18,6 +18,12 @@ let hideNav1Menu = () => {
     nav1.classList.add("closenewbg");
     nav1P.classList.add("invisible");
     nav1P.classList.remove("visible");
+    if (nav1.classList.contains("active")) {
+        nav1.classList.remove("opennewbg");
+        nav1.classList.add("closenewbg");
+        nav1P.classList.add("invisible");
+        nav1P.classList.remove("visible");
+    }
     clearTimeout(myTime);
 };
 

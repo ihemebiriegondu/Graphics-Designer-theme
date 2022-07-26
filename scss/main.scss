@@ -1,4 +1,7 @@
 $primary: orangered;
+$dark: #03101a;
+$light: rgb(60, 59, 59);
+
 $box-shadow: .3rem .3rem 0.6rem rgba(black, .4);
 
 $nav-link-padding-y: 0;
@@ -19,15 +22,15 @@ $nav-tabs-link-active-border-color: transparent;
 
 html {
     overflow-x: hidden;
-    height: 100%;
     width: 100%;
+    overflow-y: auto;
 }
 
 body {
     overflow-x: hidden;
-    height: 100%;
     width: 100%;
     margin: 0;
+    overflow-y: auto;
     background: black;
     color: white;
 }
@@ -50,19 +53,50 @@ body:before {
     display: none;
 }
 
-.mode-container {
-    position: absolute;
-    top: 2rem;
-    left: 2.5rem;
+.height {
+    height: 100%;
+}
+
+.card {
+    background-color: $dark  !important;
+}
+
+.tab a.active i {
+    background-color: orangered;
+}
+
+.tabcontent {
+    animation: fadeEffect 2s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+        width: 50%;
+    }
+
+    to {
+        opacity: 1;
+        width: 90%;
+    }
 }
 
 .mode-container div {
+    position: fixed;
+    top: 2rem;
+    z-index: 1;
+    left: 2.5rem;
     background-color: rgba($color: whitesmoke, $alpha: 0.3);
     border-radius: 50%;
+    transition: background-color 0.3s linear;
+}
+
+.mode-container div:hover {
+    background-color: rgba($color: whitesmoke, $alpha: 0.4);
 }
 
 .fixed-bottom {
-    background-color: rgb(60, 59, 59);
+    background-color: $light;
 }
 
 .img-div div {
@@ -83,6 +117,40 @@ body:before {
     text-align: center;
     width: 100%;
     z-index: 1;
+}
+
+.nav-i {
+    background-color: rgb(76, 75, 75);
+}
+
+.show-i-bg {
+    animation: showIBg 0.25s linear;
+    background-color: $primary;
+}
+
+@keyframes showIBg {
+    from {
+        background-color: rgb(76, 75, 75);
+    }
+
+    to {
+        background-color: $primary;
+    }
+}
+
+.hide-i-bg {
+    animation: hideIBg 0.4s linear;
+    background-color: rgb(76, 75, 75);
+}
+
+@keyframes hideIBg {
+    from {
+        background-color: $primary;
+    }
+
+    to {
+        background-color: rgb(76, 75, 75);
+    }
 }
 
 .opennewbg {
@@ -141,10 +209,87 @@ body:before {
     }
 }
 
+footer i {
+    padding: 8px 12px;
+    background-color: rgb(91, 87, 87);
+}
 
+footer .tab a.active i {
+    animation: footerNavBg 0.7s;
+    background-color: orangered;
+}
+
+@keyframes footerNavBg {
+    from {
+        background-color: rgb(91, 87, 87);
+    }
+    to {
+        background-color: orangered;
+    }
+}
+
+
+//about page
+.line {
+    width: 2rem;
+    background-color: gray;
+    height: 0.5px;
+}
+
+#aboutpage h1 {
+    text-shadow: 5px 5px 3px rgb(58, 58, 58);
+}
+
+.personal p {
+    display: flex;
+}
+
+.skills,
+.experience {
+    margin-top: 9rem;
+}
+
+.skills h5, .experience h5 {
+    margin-left: -15rem;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 0;
+    }
+}
+
+.hori-line {
+    width: 0.6px;
+    background-color: rgba($primary, 0.3);
+    height: 6rem;
+}
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .personal p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mode-container {
+        top: 1rem;
+        left: 0;
+    }
+}
 
 @media (max-width: 992px) {
-    body, html {
+
+    body,
+    html {
         height: 50rem;
     }
 
@@ -161,9 +306,8 @@ body:before {
         transform: none;
     }
 
-    .mode-container {
-        top: 1rem;
-        left: 1.5rem;
+    .mode-container div {
+        position: absolute;
     }
 
     .intro-text {
@@ -189,6 +333,21 @@ body:before {
         object-fit: cover;
         overflow: hidden;
     }
+
+    //about page
+    .skills,
+    .experience {
+        margin-top: 9rem;
+    }
+
+    .skills h5, .experience h5 {
+        margin-left: 0;
+    }
+
+    .personal p {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 @media (max-width: 576px) {
@@ -197,7 +356,13 @@ body:before {
         width: 13.875rem;
         margin: 0 auto;
     }
-}
 
+    //about page
+
+    .personal p {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";

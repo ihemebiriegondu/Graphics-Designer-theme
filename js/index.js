@@ -154,8 +154,8 @@ let hideNav5Menu = () => {
 
 //tab contents
 
-function showSectionBody(evt, cityName) {
-    var i, tabcontent, tablinks;
+let showSectionBody = (evt, cityName) => {
+    let i, tabcontent, tablinks, tabcontents;
 
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -163,6 +163,7 @@ function showSectionBody(evt, cityName) {
         tabcontent[i].classList.add("d-none");
         tabcontent[i].classList.remove("d-flex");
     }
+
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -172,6 +173,15 @@ function showSectionBody(evt, cityName) {
     document.getElementById(cityName).classList.remove("d-none");
     evt.currentTarget.className += " active";
 }
+
+let addBgToAbout = () => {
+    aboutBgs = document.querySelectorAll(".about-bg");
+    aboutBgs.forEach(aboutBg => {
+        aboutBg.classList.add("active");
+    });
+};
+
+
 
 //about page
 

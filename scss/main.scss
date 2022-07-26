@@ -61,6 +61,10 @@ body:before {
     background-color: $dark  !important;
 }
 
+.tab a{
+    cursor: pointer;
+}
+
 .tab a.active i {
     background-color: orangered;
 }
@@ -209,12 +213,17 @@ body:before {
     }
 }
 
+footer .tab a{
+    cursor: default;
+}
+
 footer i {
     padding: 8px 12px;
     background-color: rgb(91, 87, 87);
+    cursor: pointer;
 }
 
-footer .tab a.active i {
+footer .tab a.active i, footer i:hover {
     animation: footerNavBg 0.7s;
     background-color: orangered;
 }
@@ -270,7 +279,7 @@ footer .tab a.active i {
 }
 
 
-
+//portfolio page
 
 
 

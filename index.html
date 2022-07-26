@@ -33,7 +33,7 @@
                         </a>
                         <a onmouseover="displayNav2Menu()" onmouseout="hideNav2Menu()"
                             onclick="showSectionBody(event, 'aboutpage')"
-                            class="d-flex align-items-center rounded-pill mb-4 nav-items nav-item2 text-white text-decoration-none tablinks">
+                            class="d-flex align-items-center rounded-pill about-bg mb-4 nav-items nav-item2 text-white text-decoration-none tablinks">
                             <i class="py-3 px-3 bi bi-person-fill fs-5 rounded-circle nav-i"></i>
                             <p class="text-uppercase ms-2 me-4 invisible my-0">About</p>
                         </a>
@@ -77,10 +77,10 @@
                             earum cupiditate neque. Cum odio minus voluptatibus suscipit atque eveniet omnis dolorum
                             aspernatur,
                             nesciunt fugiat.</p>
-                        <div class="text-lg-start text-center mt-5">
+                        <div class="text-lg-start text-center mt-5 tab">
                             <div class="more m-lg-0 m-auto">
-                                <a href=""
-                                    class="btn btn-outline-primary p-0 d-flex align-items-center ps-3 rounded-pill justify-content-between text-white text-decoration-none">
+                                <a onclick="showSectionBody(event, 'aboutpage'); addBgToAbout()"
+                                    class="btn btn-outline-primary p-0 d-flex align-items-center tablinks ps-3 rounded-pill justify-content-between text-white text-decoration-none">
                                     <p class="text-uppercase mb-0">More about me</p>
                                     <i
                                         class="bi bi-arrow-right-short bg-primary pe-3 ps-3 fs-5 text-center py-3 rounded-circle"></i>
@@ -427,22 +427,514 @@
 
 
             <!--three-->
-            <div id="portfoliopage"
-                class="col-lg-11 d-none flex-lg-row flex-column-reverse justify-content-lg-start justify-content-center tabcontent">
 
+            <div id="portfoliopage" class="col-12 d-none tabcontent bg-dark m-auto">
+                <div class="py-5">
+                    <div class="pb-5 ps-lg-5 pe-lg-0 pe-5">
+                        <h1 class="text-uppercase display-3 fw-bold my-lg-4 ms-lg-5 text-lg-start text-center">About
+                            <span class="text-primary">me</span>
+                        </h1>
+                    </div>
+                    <div
+                        class="col-xxl-10 col-lg-11 m-xxl-auto ms-xxl-auto d-flex flex-column justify-content-center pe-xl-5">
+                        <div>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab"
+                                        data-bs-target="#all-tab-pane" type="button" role="tab"
+                                        aria-controls="all-tab-pane" aria-selected="true">All</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="logo-tab" data-bs-toggle="tab"
+                                        data-bs-target="#logo-tab-pane" type="button" role="tab"
+                                        aria-controls="logo-tab-pane" aria-selected="false">Profile</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="mockups-tab" data-bs-toggle="tab"
+                                        data-bs-target="#mockups-tab-pane" type="button" role="tab"
+                                        aria-controls="mockups-tab-pane" aria-selected="false">Contact</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="branding-tab" data-bs-toggle="tab"
+                                        data-bs-target="#branding-tab-pane" type="button" role="tab"
+                                        aria-controls="branding-tab-pane" aria-selected="false">Branding</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="flyer-tab" data-bs-toggle="tab"
+                                        data-bs-target="#flyer-tab-pane" type="button" role="tab"
+                                        aria-controls="flyer-tab-pane" aria-selected="false">flyer</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="photography-tab" data-bs-toggle="tab"
+                                        data-bs-target="#photography-tab-pane" type="button" role="tab"
+                                        aria-controls="photography-tab-pane" aria-selected="false">photography</button>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+
+                                <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel"
+                                    aria-labelledby="all-tab" tabindex="0">
+                                    <div>
+                                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/bali.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/barcelona.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/hawaii.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/london.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/miami.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/munich.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/new-york-city.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/ocean.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/paris.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/sydney.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/tokyo.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane fade" id="logo-tab-pane" role="tabpanel" aria-labelledby="logo-tab"
+                                    tabindex="0">
+                                    <div>
+                                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/bali.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/barcelona.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/hawaii.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/london.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/miami.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/munich.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/new-york-city.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/ocean.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/paris.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/sydney.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/tokyo.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="mockups-tab-pane" role="tabpanel"
+                                    aria-labelledby="mockups-tab" tabindex="0">
+                                    <div>
+                                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/bali.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/barcelona.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/hawaii.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/london.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/miami.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/munich.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/new-york-city.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/ocean.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/paris.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/sydney.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/tokyo.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="branding-tab-pane" role="tabpanel"
+                                    aria-labelledby="branding-tab" tabindex="0">
+                                    <div>
+                                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/bali.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/barcelona.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/hawaii.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/london.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/miami.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/munich.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/new-york-city.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/ocean.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/paris.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/sydney.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/tokyo.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="flyer-tab-pane" role="tabpanel"
+                                    aria-labelledby="flyer-tab" tabindex="0">
+                                    <div>
+                                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/bali.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/barcelona.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/hawaii.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/london.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/miami.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/munich.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/new-york-city.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/ocean.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/paris.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/sydney.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/tokyo.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="photography-tab-pane" role="tabpanel"
+                                    aria-labelledby="photography-tab" tabindex="0">
+                                    <div>
+                                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/bali.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/barcelona.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/hawaii.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/london.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/miami.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/munich.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/new-york-city.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/ocean.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/paris.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/sydney.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card">
+                                                    <img src="./images/Projects/tokyo.jpg" class="card-img-top"
+                                                        alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
+
+            <!--
+                        -->
+
 
 
             <!--four-->
-            <div id="contactpage"
-                class="col-lg-11 d-none flex-lg-row flex-column-reverse justify-content-lg-start justify-content-center tabcontent">
+            <div id="contactpage" class="">
 
             </div>
 
 
             <!--five-->
-            <div id="blogpage"
-                class="col-lg-11 d-none flex-lg-row flex-column-reverse justify-content-lg-start justify-content-center tabcontent">
+            <div id="blogpage" class="">
 
             </div>
 
@@ -455,7 +947,7 @@
                     onclick="showSectionBody(event, 'homepage')">
                     <i class="bi bi-house-door-fill fs-5 rounded-circle"></i>
                 </a>
-                <a class="rounded-pill nav-items nav-item2 text-white text-decoration-none tablinks"
+                <a class="rounded-pill nav-items nav-item2 text-white text-decoration-none tablinks about-bg"
                     onclick="showSectionBody(event, 'aboutpage')">
                     <i class="bi bi-person-fill fs-5 rounded-circle"></i>
                 </a>

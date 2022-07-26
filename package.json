@@ -9,6 +9,7 @@
   "author": "Egondu",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.0",
+    "mdb-ui-kit": "^4.3.0"
   }
 }

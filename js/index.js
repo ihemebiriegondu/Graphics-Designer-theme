@@ -154,8 +154,8 @@ let hideNav5Menu = () => {
 
 //tab contents
 
-let showSectionBody = (evt, cityName) => {
-    let i, tabcontent, tablinks, tabcontents;
+let showSectionBody = (evt, navName) => {
+    let i, tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -168,9 +168,9 @@ let showSectionBody = (evt, cityName) => {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
-    document.getElementById(cityName).classList.add("d-flex");
-    document.getElementById(cityName).classList.remove("d-none");
+    document.getElementById(navName).style.display = "block";
+    document.getElementById(navName).classList.add("d-flex");
+    document.getElementById(navName).classList.remove("d-none");
     evt.currentTarget.className += " active";
 }
 
@@ -185,3 +185,31 @@ let addBgToAbout = () => {
 
 //about page
 
+
+//
+
+//portfolio page
+//rotate images
+
+
+let rotateProjectsImages = (evt, cardName) => {
+    document.getElementById(cardName).classList.remove("d-none");
+    document.getElementById(cardName).classList.add("d-flex");
+
+    evt.currentTarget.className += " d-none";
+}
+
+let removeRotateProjectsImage = () => {
+    cards = document.querySelectorAll("#portfoliopage .card");
+    cardsImg = document.querySelectorAll("#portfoliopage .card img");
+    newcards = document.querySelectorAll("#portfoliopage .diff-col");
+
+    newcards.forEach(newcard => {
+        newcard.classList.remove("d-flex")
+        newcard.classList.add("d-none");
+    });
+
+    cardsImg.forEach(cardImg => {
+        cardImg.classList.replace("d-none", "d-block");
+    });
+}

@@ -13,10 +13,10 @@ $nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out,
 
 $nav-tabs-border-color: $primary;
 $nav-tabs-border-width: 0;
-$nav-tabs-border-radius: 50rem;
+$nav-tabs-border-radius: 0;
 $nav-tabs-link-hover-border-color: transparent;
-$nav-tabs-link-active-color: white;
-$nav-tabs-link-active-bg: $primary;
+$nav-tabs-link-active-color: $primary;
+$nav-tabs-link-active-bg: transparent;
 $nav-tabs-link-active-border-color: transparent;
 
 
@@ -63,6 +63,7 @@ body:before {
 
 .tab a {
     cursor: pointer;
+    z-index: 1;
 }
 
 .tab a.active i {
@@ -247,7 +248,8 @@ footer i:hover {
     height: 0.5px;
 }
 
-#aboutpage h1 {
+#aboutpage h1,
+#portfoliopage h1 {
     text-shadow: 5px 5px 3px rgb(58, 58, 58);
 }
 
@@ -287,9 +289,69 @@ footer i:hover {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
     background-color: transparent !important;
-    color: $primary !important;
+    color: $primary  !important;
+    border: none !important;
+    outline: none !important;
 }
 
+#portfoliopage .card {
+    overflow: hidden;
+    border-radius: 10px !important;
+    border: 0;
+    animation: showPortfolioImages 1s;
+    img {
+        height: 230px;
+        object-fit: cover;
+    }
+}
+
+@keyframes showPortfolioImages {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#portfoliopage .card:hover {
+    cursor: pointer;
+}
+
+.diff-col {
+    cursor: pointer;
+    animation: shownewbg 0.2s linear;
+    background-color: $primary;
+    height: 100%;
+}
+
+.first-roundo {
+    border-radius: 10px;
+    height: 100%;
+}
+
+@keyframes shownewbg {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+
+    50% {
+        height: 50%;
+        opacity: 0;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+#portfoliopage .tab-pane {
+    border: none;
+    outline: none;
+}
 
 @media (max-width: 1200px) {
     .personal p {
@@ -297,9 +359,9 @@ footer i:hover {
         flex-direction: column;
     }
 
-    .mode-container {
+    .mode-container div {
         top: 1rem;
-        left: 0;
+        left: 1.5rem;
     }
 }
 
@@ -325,6 +387,8 @@ footer i:hover {
 
     .mode-container div {
         position: absolute;
+        top: 1rem;
+        left: -1.6rem;
     }
 
     .intro-text {
@@ -368,11 +432,21 @@ footer i:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .mode-container div {
+        left: -1rem;
+    }
+}
+
 @media (max-width: 576px) {
     .img-div {
         height: 13.875rem;
         width: 13.875rem;
         margin: 0 auto;
+    }
+
+    .mode-container div {
+        left: -0.5rem;
     }
 
     //about page

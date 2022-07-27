@@ -61,7 +61,7 @@ body:before {
     background-color: $dark  !important;
 }
 
-.tab a{
+.tab a {
     cursor: pointer;
 }
 
@@ -213,7 +213,7 @@ body:before {
     }
 }
 
-footer .tab a{
+footer .tab a {
     cursor: default;
 }
 
@@ -223,7 +223,8 @@ footer i {
     cursor: pointer;
 }
 
-footer .tab a.active i, footer i:hover {
+footer .tab a.active i,
+footer i:hover {
     animation: footerNavBg 0.7s;
     background-color: orangered;
 }
@@ -232,6 +233,7 @@ footer .tab a.active i, footer i:hover {
     from {
         background-color: rgb(91, 87, 87);
     }
+
     to {
         background-color: orangered;
     }
@@ -258,7 +260,8 @@ footer .tab a.active i, footer i:hover {
     margin-top: 9rem;
 }
 
-.skills h5, .experience h5 {
+.skills h5,
+.experience h5 {
     margin-left: -15rem;
 }
 
@@ -281,6 +284,11 @@ footer .tab a.active i, footer i:hover {
 
 //portfolio page
 
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background-color: transparent !important;
+    color: $primary !important;
+}
 
 
 @media (max-width: 1200px) {
@@ -349,7 +357,8 @@ footer .tab a.active i, footer i:hover {
         margin-top: 9rem;
     }
 
-    .skills h5, .experience h5 {
+    .skills h5,
+    .experience h5 {
         margin-left: 0;
     }
 

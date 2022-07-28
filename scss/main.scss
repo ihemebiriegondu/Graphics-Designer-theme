@@ -1,5 +1,5 @@
 $primary: orangered;
-$dark: #03101a;
+$dark: rgb(3, 16, 26);
 $light: rgb(60, 59, 59);
 
 $box-shadow: .3rem .3rem 0.6rem rgba(black, .4);
@@ -19,22 +19,72 @@ $nav-tabs-link-active-color: $primary;
 $nav-tabs-link-active-bg: transparent;
 $nav-tabs-link-active-border-color: transparent;
 
+$modal-content-bg: rgb(29, 27, 27);
+$modal-content-border-radius: 20px;
+$modal-backdrop-opacity: .9;
+$modal-header-border-color: transparent;
+$modal-header-border-width: 0;
+
+.modal {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog {
+    height: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70% !important;
+    margin: auto;
+}
+
+.modal-body {
+    height: 75% !important;
+
+}
+
+.project-img-div {
+    height: 70%;
+}
+
+.modal-body img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: none !important;
+}
+
+$btn-close-color: white;
+
+$btn-close-focus-shadow: none;
+$btn-close-opacity: 1;
+$btn-close-hover-opacity: 1;
+$btn-close-focus-opacity: 1;
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/><path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/></svg>");
+
 
 html {
     overflow-x: hidden;
     width: 100%;
-    overflow-y: auto;
 }
 
 body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-    overflow-y: auto;
-    background: black;
+    background: $dark;
     color: white;
 }
-
+/*
 body:before {
     content: "";
     overflow-x: hidden;
@@ -48,12 +98,24 @@ body:before {
     transform: skew(-15deg);
     transform-origin: bottom;
 }
+*/
 
 ::-webkit-scrollbar {
     display: none;
 }
 
-.height {
+.nav-container {
+    position: fixed;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    z-index: 2;
+}
+
+.first-tab {
     height: 100%;
 }
 
@@ -102,6 +164,10 @@ body:before {
 
 .fixed-bottom {
     background-color: $light;
+}
+
+.img-div {
+    height: 90%;
 }
 
 .img-div div {
@@ -299,6 +365,7 @@ footer i:hover {
     border-radius: 10px !important;
     border: 0;
     animation: showPortfolioImages 1s;
+
     img {
         height: 230px;
         object-fit: cover;
@@ -320,16 +387,44 @@ footer i:hover {
 }
 
 .diff-col {
-    cursor: pointer;
-    animation: shownewbg 0.2s linear;
-    background-color: $primary;
+    position: absolute;
+    width: 100%;
     height: 100%;
+    background-color: rgba($primary, 1);
+    opacity: 0;
+    z-index: 2;
+    transition: all ease-in-out 0.5s;
 }
 
-.first-roundo {
-    border-radius: 10px;
-    height: 100%;
+#portfoliopage .card:hover .diff-col {
+    opacity: 1;
 }
+
+#portfoliopage .card img {
+    transform: scale(1);
+    z-index: 1;
+    transition: all ease-in-out 0.5s;
+}
+
+#portfoliopage .card:hover img {
+    transform: scale(1.1);
+    filter: blur(1px);
+}
+
+.diff-col h5 {
+    text-align: center;
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+#portfoliopage .card:hover .diff-col h5 {
+    bottom: 40%;
+    opacity: 1;
+}
+
 
 @keyframes shownewbg {
     0% {
@@ -353,6 +448,8 @@ footer i:hover {
     outline: none;
 }
 
+
+
 @media (max-width: 1200px) {
     .personal p {
         display: flex;
@@ -363,6 +460,15 @@ footer i:hover {
         top: 1rem;
         left: 1.5rem;
     }
+
+    .modal-dialog {
+        width: 700px !important;
+        max-width: 700px !important;
+    }
+
+    .modal-body img {
+        height: 300px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -372,7 +478,7 @@ footer i:hover {
         height: 50rem;
     }
 
-    body:before {
+    /*body:before {
         content: "";
         overflow-x: hidden;
         position: static;
@@ -383,12 +489,11 @@ footer i:hover {
         width: 100%;
         background: black;
         transform: none;
-    }
+    }*/
 
     .mode-container div {
-        position: absolute;
         top: 1rem;
-        left: -1.6rem;
+        left: 1rem;
     }
 
     .intro-text {
@@ -430,11 +535,27 @@ footer i:hover {
         display: flex;
         flex-direction: row;
     }
+
+    //portfolio
+
+    .modal-dialog {
+        width: 600px !important;
+        max-width: 600px !important;
+    }
+
+    .modal-body {
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 768px) {
-    .mode-container div {
-        left: -1rem;
+    .modal-dialog {
+        width: 500px !important;
+        max-width: 500px !important;
+    }
+
+    .modal-body img {
+        height: 250px;
     }
 }
 
@@ -445,16 +566,31 @@ footer i:hover {
         margin: 0 auto;
     }
 
-    .mode-container div {
-        left: -0.5rem;
-    }
-
     //about page
 
     .personal p {
         display: flex;
         flex-direction: column;
     }
+
+    //portfolio page
+    .modal-dialog {
+        margin: auto !important;
+        width: 400px !important;
+        max-width: 400px !important;
+    }
+
+    .modal-body img {
+        height: 200px;
+    }
 }
+
+@media (max-width: 430px) {
+    .modal-dialog {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";

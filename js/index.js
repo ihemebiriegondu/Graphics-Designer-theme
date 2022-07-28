@@ -190,26 +190,3 @@ let addBgToAbout = () => {
 
 //portfolio page
 //rotate images
-
-
-let rotateProjectsImages = (evt, cardName) => {
-    document.getElementById(cardName).classList.remove("d-none");
-    document.getElementById(cardName).classList.add("d-flex");
-
-    evt.currentTarget.className += " d-none";
-}
-
-let removeRotateProjectsImage = () => {
-    cards = document.querySelectorAll("#portfoliopage .card");
-    cardsImg = document.querySelectorAll("#portfoliopage .card img");
-    newcards = document.querySelectorAll("#portfoliopage .diff-col");
-
-    newcards.forEach(newcard => {
-        newcard.classList.remove("d-flex")
-        newcard.classList.add("d-none");
-    });
-
-    cardsImg.forEach(cardImg => {
-        cardImg.classList.replace("d-none", "d-block");
-    });
-}

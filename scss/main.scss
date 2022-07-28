@@ -25,6 +25,19 @@ $modal-backdrop-opacity: .9;
 $modal-header-border-color: transparent;
 $modal-header-border-width: 0;
 
+$input-bg: rgba(76, 75, 75, 0.6);
+$input-padding-y: 0.8rem;
+$input-font-size: 15px;
+
+$input-border-color: transparent;
+$input-border-width: 2px;
+$input-box-shadow: none;
+
+$input-border-radius: 30px;
+
+$input-focus-border-color: $primary;
+$input-focus-box-shadow: none;
+
 .modal {
     height: 100% !important;
     display: flex;
@@ -84,6 +97,7 @@ body {
     background: $dark;
     color: white;
 }
+
 /*
 body:before {
     content: "";
@@ -151,7 +165,7 @@ body:before {
     position: fixed;
     top: 2rem;
     z-index: 4;
-    left: 2.5rem;
+    left: 1rem;
     background-color: rgba($color: whitesmoke, $alpha: 0.3);
     border-radius: 50%;
     transition: background-color 0.3s linear;
@@ -190,7 +204,7 @@ body:before {
 }
 
 .nav-i {
-    background-color: rgb(76, 75, 75);
+    background-color: rgba(76, 75, 75, 0.6);
 }
 
 .show-i-bg {
@@ -314,7 +328,8 @@ footer i:hover {
 }
 
 #aboutpage h1,
-#portfoliopage h1 {
+#portfoliopage h1,
+#contactpage h1 {
     text-shadow: 5px 5px 3px rgb(58, 58, 58);
 }
 
@@ -447,17 +462,26 @@ footer i:hover {
     outline: none;
 }
 
+//contact
+textarea {
+    resize: none !important;
+    border-radius: 30px;
+    background-color: rgba(76, 75, 75, 0.6);
+    border: none;
+    outline: none;
+    border: 2px solid transparent !important;
+}
+
+textarea:focus, textarea:active {
+    border-color: $primary !important;
+}
+
 
 
 @media (max-width: 1200px) {
     .personal p {
         display: flex;
         flex-direction: column;
-    }
-
-    .mode-container div {
-        top: 1rem;
-        left: 1.5rem;
     }
 
     .modal-dialog {
@@ -484,11 +508,6 @@ footer i:hover {
         background: black;
         transform: none;
     }*/
-
-    .mode-container div {
-        top: 1rem;
-        left: 1rem;
-    }
 
     .intro-text {
         height: 60%;

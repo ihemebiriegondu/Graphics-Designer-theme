@@ -84,7 +84,7 @@ body {
     background: $dark;
     color: white;
 }
-/*
+
 body:before {
     content: "";
     overflow-x: hidden;
@@ -98,7 +98,6 @@ body:before {
     transform: skew(-15deg);
     transform-origin: bottom;
 }
-*/
 
 ::-webkit-scrollbar {
     display: none;
@@ -478,7 +477,7 @@ footer i:hover {
         height: 50rem;
     }
 
-    /*body:before {
+    body:before {
         content: "";
         overflow-x: hidden;
         position: static;
@@ -489,7 +488,7 @@ footer i:hover {
         width: 100%;
         background: black;
         transform: none;
-    }*/
+    }
 
     .mode-container div {
         top: 1rem;

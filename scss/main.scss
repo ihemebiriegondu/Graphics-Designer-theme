@@ -84,7 +84,7 @@ body {
     background: $dark;
     color: white;
 }
-
+/*
 body:before {
     content: "";
     overflow-x: hidden;
@@ -97,7 +97,7 @@ body:before {
     background: linear-gradient(orange, red);
     transform: skew(-15deg);
     transform-origin: bottom;
-}
+}*/
 
 ::-webkit-scrollbar {
     display: none;
@@ -150,7 +150,7 @@ body:before {
 .mode-container div {
     position: fixed;
     top: 2rem;
-    z-index: 1;
+    z-index: 4;
     left: 2.5rem;
     background-color: rgba($color: whitesmoke, $alpha: 0.3);
     border-radius: 50%;
@@ -472,12 +472,7 @@ footer i:hover {
 
 @media (max-width: 992px) {
 
-    body,
-    html {
-        height: 50rem;
-    }
-
-    body:before {
+    /*body:before {
         content: "";
         overflow-x: hidden;
         position: static;
@@ -488,7 +483,7 @@ footer i:hover {
         width: 100%;
         background: black;
         transform: none;
-    }
+    }*/
 
     .mode-container div {
         top: 1rem;
@@ -580,7 +575,7 @@ footer i:hover {
     }
 
     .modal-body img {
-        height: 200px;
+        height: 300px;
     }
 }
 

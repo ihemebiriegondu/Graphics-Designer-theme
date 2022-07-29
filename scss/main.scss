@@ -1,6 +1,7 @@
 $primary: orangered;
 $dark: rgb(3, 16, 26);
 $light: rgb(60, 59, 59);
+$white: white;
 
 $box-shadow: .3rem .3rem 0.6rem rgba(black, .4);
 
@@ -38,51 +39,22 @@ $input-border-radius: 30px;
 $input-focus-border-color: $primary;
 $input-focus-box-shadow: none;
 
-.modal {
-    height: 100% !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-dialog {
-    height: 80% !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70% !important;
-    margin: auto;
-}
-
-.modal-body {
-    height: 75% !important;
-
-}
-
-.project-img-div {
-    height: 70%;
-}
-
-.modal-body img {
-    height: 350px;
-    object-fit: cover;
-}
-
-.modal-dialog-centered {
-    display: flex;
-    align-items: center;
-    min-height: none !important;
-}
-
 $btn-close-color: white;
-
 $btn-close-focus-shadow: none;
 $btn-close-opacity: 1;
 $btn-close-hover-opacity: 1;
 $btn-close-focus-opacity: 1;
 $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/><path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+
+$carousel-indicator-width: 12px;
+$carousel-indicator-height: 10px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer: 7px;
+$carousel-indicator-opacity: .5;
+$carousel-indicator-active-bg: $primary;
+$carousel-indicator-active-opacity: 1;
+
 
 
 html {
@@ -94,8 +66,17 @@ body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-    background: $dark;
-    color: white;
+    background-color: $dark !important;
+    color: white !important;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.modebody {
+    background-color: white !important;
+    color: $dark !important;
+    transition: all 0.5s ease-in-out;
 }
 
 /*
@@ -113,8 +94,16 @@ body:before {
     transform-origin: bottom;
 }*/
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
+}
+
+.diffSpans{
+    color: white !important;
+}
+
+.mode-diffspans {
+    color: black !important;
 }
 
 .nav-container {
@@ -132,10 +121,6 @@ body:before {
     height: 100%;
 }
 
-.card {
-    background-color: $dark  !important;
-}
-
 .tab a {
     cursor: pointer;
     z-index: 1;
@@ -143,6 +128,7 @@ body:before {
 
 .tab a.active i {
     background-color: orangered;
+    color: white !important;
 }
 
 .tabcontent {
@@ -166,17 +152,27 @@ body:before {
     top: 2rem;
     z-index: 4;
     left: 1rem;
-    background-color: rgba($color: whitesmoke, $alpha: 0.3);
+    background-color: rgba($color: gray, $alpha: 0.4);
     border-radius: 50%;
     transition: background-color 0.3s linear;
 }
 
+.newmode-container{
+    background-color: rgba(204, 202, 202, 0.4) !important;
+}
+
+.newmode-container:hover{
+    background-color: rgba($color: rgb(150, 147, 147), $alpha: 0.4) !important;
+}
+
 .mode-container div:hover {
-    background-color: rgba($color: whitesmoke, $alpha: 0.4);
+    background-color: rgba($color: rgb(172, 169, 169), $alpha: 0.4);
+    cursor: pointer;
 }
 
 .fixed-bottom {
-    background-color: $light;
+    background-color: rgb(43, 41, 41);
+    transition: all 0.5s ease-in-out;
 }
 
 .img-div {
@@ -204,17 +200,19 @@ body:before {
 }
 
 .nav-i {
-    background-color: rgba(76, 75, 75, 0.6);
+    background-color: rgba(76, 75, 75, 0.3);
+    color: white;
 }
 
 .show-i-bg {
     animation: showIBg 0.25s linear;
     background-color: $primary;
+    color: white !important;
 }
 
 @keyframes showIBg {
     from {
-        background-color: rgb(76, 75, 75);
+        background-color: rgba(76, 75, 75, 0.3);
     }
 
     to {
@@ -224,7 +222,7 @@ body:before {
 
 .hide-i-bg {
     animation: hideIBg 0.4s linear;
-    background-color: rgb(76, 75, 75);
+    background-color: rgba(76, 75, 75, 0.3);
 }
 
 @keyframes hideIBg {
@@ -233,7 +231,7 @@ body:before {
     }
 
     to {
-        background-color: rgb(76, 75, 75);
+        background-color: rgba(76, 75, 75, 0.3);
     }
 }
 
@@ -281,6 +279,7 @@ body:before {
 .more a:hover {
     animation: showMoreBg 0.5s linear;
     background-color: $primary;
+    color: white !important;
 }
 
 @keyframes showMoreBg {
@@ -299,7 +298,7 @@ footer .tab a {
 
 footer i {
     padding: 8px 12px;
-    background-color: rgb(91, 87, 87);
+    background-color: rgba(76, 75, 75, 0.3);
     cursor: pointer;
 }
 
@@ -307,11 +306,12 @@ footer .tab a.active i,
 footer i:hover {
     animation: footerNavBg 0.7s;
     background-color: orangered;
+    color: white;
 }
 
 @keyframes footerNavBg {
     from {
-        background-color: rgb(91, 87, 87);
+        background-color: rgba(76, 75, 75, 0.3);
     }
 
     to {
@@ -321,6 +321,7 @@ footer i:hover {
 
 
 //about page
+
 .line {
     width: 2rem;
     background-color: gray;
@@ -329,8 +330,15 @@ footer i:hover {
 
 #aboutpage h1,
 #portfoliopage h1,
-#contactpage h1 {
+#contactpage h1,
+#blogpage h1 {
     text-shadow: 5px 5px 3px rgb(58, 58, 58);
+}
+
+.modeh1 {
+    text-shadow: 5px 5px 3px white !important;
+    color: #535252;
+    transition: all 0.5s ease-in-out;
 }
 
 .personal p {
@@ -439,28 +447,62 @@ footer i:hover {
     opacity: 1;
 }
 
-
-@keyframes shownewbg {
-    0% {
-        opacity: 0;
-        height: 0;
-    }
-
-    50% {
-        height: 50%;
-        opacity: 0;
-    }
-
-    100% {
-        height: 100%;
-        opacity: 1;
-    }
-}
-
 #portfoliopage .tab-pane {
     border: none;
     outline: none;
 }
+
+.modal {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog {
+    height: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70% !important;
+    margin: auto;
+}
+
+.modal-body {
+    height: 75% !important;
+
+}
+
+.project-img-div {
+    height: 70%;
+}
+
+.modal-body img,
+.modal-body video,
+.modal iframe {
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: none !important;
+}
+
+.carousel-indicators {
+    background-color: rgba(76, 75, 75, 0.5);
+    height: 15% !important;
+    align-items: center !important;
+
+    button {
+        border-radius: 50% !important;
+        border: 1px solid $primary;
+    }
+}
+
 
 //contact
 textarea {
@@ -472,8 +514,96 @@ textarea {
     border: 2px solid transparent !important;
 }
 
-textarea:focus, textarea:active {
-    border-color: $primary !important;
+textarea:focus,
+textarea:active {
+    border-color: $primary  !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 40px $input-bg inset !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: white;
+}
+
+
+//blogpage
+#blogpage .card {
+    background-color: rgba(76, 75, 75, 0.5) !important;
+    overflow: hidden;
+
+    h5 {
+        transition: all 0.1s ease-in-out;
+    }
+
+    .card-img {
+        height: 250px;
+        overflow: hidden;
+        border-bottom: 6px solid $primary;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            transform: scale(1);
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+}
+
+#blogpage .card:hover {
+    cursor: pointer;
+
+    h5 {
+        color: $primary;
+    }
+
+    img {
+        transform: scale(1.15);
+    }
+}
+
+#blogpage .modal {
+    overflow-x: hidden !important;
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: $light;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #6e6d6d;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #6e6d6d;
+    }
+
+    .modal-dialog {
+        overflow-x: hidden !important;
+        width: 100% !important;
+
+        .modal-content {
+            overflow-x: hidden !important;
+
+            .modal-body {
+                overflow-x: hidden !important;
+
+                img {
+                    width: 100% !important;
+                    object-fit: cover;
+                    margin: 1.5rem 0;
+                }
+
+                .quote .quote-text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }
 
 
@@ -570,6 +700,10 @@ textarea:focus, textarea:active {
     .modal-body img {
         height: 250px;
     }
+
+    #blogpage .card .card-img {
+        height: 350px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -595,6 +729,11 @@ textarea:focus, textarea:active {
 
     .modal-body img {
         height: 300px;
+    }
+
+    //blogpage
+    #blogpage .card .card-img {
+        height: 250px;
     }
 }
 

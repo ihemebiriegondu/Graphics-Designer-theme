@@ -190,3 +190,147 @@ let addBgToAbout = () => {
 
 //portfolio page
 //rotate images
+
+
+//cursor
+const cursorRounded = document.querySelector('.rounded');
+const cursorPointed = document.querySelector('.pointed');
+
+
+const moveCursor = (e) => {
+    const mouseY = e.clientY;
+    const mouseX = e.clientX;
+
+    let x = mouseX
+    let y = mouseY
+
+    cursorPointed.style.top = `${y}px`
+    cursorPointed.style.left = `${x}px`
+    cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+}
+
+window.addEventListener('mousemove', moveCursor)
+
+
+// dark mode
+const body = document.querySelector("body");
+const modeContainer = document.querySelector(".mode-container");
+const modeContainerI = document.querySelector(".mode-container i");
+const navs = document.querySelectorAll(".nav-container .nav-items i");
+const footerNav = document.querySelectorAll("footer i");
+const moreButtons = document.querySelectorAll(".more a");
+const shadowImg = document.querySelector(".shadow-img");
+const fixedBottom = document.querySelector(".fixed-bottom");
+const cards = document.querySelectorAll(".card");
+const h1a = document.querySelector("#aboutpage h1")
+const h1c = document.querySelector("#contactpage h1")
+const h1b = document.querySelector("#blogpage h1")
+const h1p = document.querySelector("#portfoliopage h1")
+const portfolioTabs = document.querySelectorAll("#portfoliopage .nav-link")
+const diffColors = document.querySelectorAll("#aboutpage span")
+const diffSpans = document.querySelectorAll("diff-span");
+
+
+let changeModeFunction = () => {
+    if (modeContainerI.classList.contains("bi-brightness-low-fill")) {
+        modeContainerI.classList.remove("bi-brightness-low-fill")
+        modeContainerI.classList.add("bi-moon")
+        modeContainerI.classList.add("text-light")
+        modeContainerI.classList.remove("fs-3")
+        modeContainerI.classList.add("fs-4")
+        h1a.classList.add("modeh1")
+        h1c.classList.add("modeh1")
+        h1b.classList.add("modeh1")
+        h1p.classList.add("modeh1")
+
+        navs.forEach(nav => {
+            nav.style.color = "rgb(3, 16, 26)"
+        });
+        document.querySelector(".mode-container div").classList.add("newmode-container")
+        body.classList.add("modebody");
+
+        moreButtons.forEach(moreButton => {
+            moreButton.classList.remove("text-white")
+            moreButton.classList.add("text-dark")
+        });
+
+        shadowImg.classList.remove("shadow");
+        fixedBottom.style.backgroundColor = "white";
+
+        cards.forEach(card => {
+            card.classList.remove("bg-dark");
+            card.classList.add("bg-white")
+            card.classList.remove("border-light")
+        })
+        footerNav.forEach(nav => {
+            nav.style.color = "rgb(3, 16, 26)"
+        })
+
+        portfolioTabs.forEach(portfolioTab => {
+            portfolioTab.classList.remove("text-white")
+            portfolioTab.classList.add("text-dark")
+        })
+
+        diffColors.forEach(diffColor => {
+            diffColor.style.color = "#928e8e"
+        });
+
+        diffSpans.forEach(diffspan => {
+            diffspan.classList.remove("diffspan");
+            diffspan.classList.add("mode-diffspans");
+        })
+        
+
+    } else {
+        modeContainerI.classList.add("bi-brightness-low-fill")
+        modeContainerI.classList.remove("bi-moon")
+        modeContainerI.classList.remove("text-light")
+        modeContainerI.classList.add("fs-3")
+        modeContainerI.classList.remove("fs-4")
+        h1a.classList.remove("modeh1")
+        h1c.classList.remove("modeh1")
+        h1b.classList.remove("modeh1")
+        h1p.classList.remove("modeh1")
+
+        navs.forEach(nav => {
+            nav.style.color = "white"
+        });
+        document.querySelector(".mode-container div").classList.remove("newmode-container")
+        body.classList.remove("modebody")
+        moreButtons.forEach(moreButton => {
+            moreButton.classList.add("text-white")
+            moreButton.classList.remove("text-dark")
+        });
+
+        shadowImg.classList.add("shadow");
+        fixedBottom.style.backgroundColor = "rgb(60, 59, 59)"
+
+        cards.forEach(card => {
+            card.classList.add("bg-dark");
+            card.classList.remove("bg-white")
+            card.classList.add("border-light")
+        })
+        footerNav.forEach(nav => {
+            nav.style.color = "white"
+        })
+
+        portfolioTabs.forEach(portfolioTab => {
+            portfolioTab.classList.add("text-white")
+            portfolioTab.classList.remove("text-dark")
+        })
+
+        diffColors.forEach(diffColor => {
+            diffColor.style.color = "rgba(255, 255, 255, 0.737)"
+        });
+
+        diffSpans.forEach(diffspan => {
+            diffspan.classList.add("diffspan");
+            diffspan.classList.remove("mode-diffspans");
+        })
+        
+    }
+};
+
+
+modeContainer.addEventListener("click", changeModeFunction);

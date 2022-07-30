@@ -229,7 +229,16 @@ const h1b = document.querySelector("#blogpage h1")
 const h1p = document.querySelector("#portfoliopage h1")
 const portfolioTabs = document.querySelectorAll("#portfoliopage .nav-link")
 const diffColors = document.querySelectorAll("#aboutpage span")
-const diffSpans = document.querySelectorAll("diff-span");
+const contactDiffcolors = document.querySelectorAll("#contactpage span")
+const diffSpans = document.querySelectorAll(".diffspan-new");
+const bgSmall = document.querySelectorAll(".bg-small");
+const modalContent = document.querySelectorAll(".modal-content")
+const blogCards = document.querySelectorAll("#blogpage .card")
+const blogModal = document.querySelectorAll("#blogpage .modal")
+const contactAs = document.querySelectorAll("#contactpage a")
+const contactAis = document.querySelectorAll("#contactpage a i")
+const navIimg = document.querySelector(".nav-i-img");
+const inputs = document.querySelectorAll("input");
 
 
 let changeModeFunction = () => {
@@ -275,11 +284,55 @@ let changeModeFunction = () => {
         diffColors.forEach(diffColor => {
             diffColor.style.color = "#928e8e"
         });
+        contactDiffcolors.forEach(diffColor => {
+            diffColor.style.color = "#928e8e"
+        });
 
         diffSpans.forEach(diffspan => {
             diffspan.classList.remove("diffspan");
             diffspan.classList.add("mode-diffspans");
         })
+
+        bgSmall.forEach(bgSmall => {
+            bgSmall.style.backgroundColor = "rgb(248, 245, 245)"
+            bgSmall.style.color = "gray"
+        })
+
+        modalContent.forEach(modalContent => {
+            modalContent.classList.add("newmodal-content");
+        });
+
+        blogCards.forEach(blogCard => {
+            blogCard.classList.remove("first-card")
+            blogCard.classList.add("newcard")
+        })
+
+        blogModal.forEach(blogModal =>{
+            blogModal.classList.add("newmodal")
+        })
+
+        contactAs.forEach(contactA => {
+            contactA.classList.remove("text-white")
+            contactA.classList.add("text-dark");
+        })
+
+        contactAis.forEach(contactAi => {
+            contactAi.classList.remove("text-white")
+            contactAi.classList.add("text-dark");
+        })
+
+        navIimg.src = "../images/facebook-logo (1).png"
+        navIimg.style.width = "15px"
+
+        inputs.forEach(input => {
+            input.classList.add("newinputs")
+        })
+
+        document.querySelector("textarea").classList.add("newtextarea")
+
+        document.querySelector("form button").classList.remove("text-white")
+        document.querySelector("form button").classList.add("text-dark")
+        
         
 
     } else {
@@ -324,10 +377,54 @@ let changeModeFunction = () => {
             diffColor.style.color = "rgba(255, 255, 255, 0.737)"
         });
 
+        contactDiffcolors.forEach(diffColor => {
+            diffColor.style.color = "rgba(255, 255, 255, 0.737)"
+        });
+
         diffSpans.forEach(diffspan => {
             diffspan.classList.add("diffspan");
             diffspan.classList.remove("mode-diffspans");
         })
+
+        bgSmall.forEach(bgSmall => {
+            bgSmall.style.color = "rgba(255, 255, 255, 0.737)"
+            bgSmall.style.backgroundColor = "rgba(54, 53, 53, 0.399)"
+        })
+
+        modalContent.forEach(modalContent => {
+            modalContent.classList.remove("newmodal-content");
+        });
+
+        blogCards.forEach(blogCard => {
+            blogCard.classList.add("first-card")
+            blogCard.classList.remove("newcard")
+        })
+
+        blogModal.forEach(blogModal =>{
+            blogModal.classList.remove("newmodal")
+        })
+
+        contactAs.forEach(contactA => {
+            contactA.classList.remove("text-dark")
+            contactA.classList.add("text-white");
+        })
+
+        contactAis.forEach(contactAi => {
+            contactAi.classList.add("text-white")
+            contactAi.classList.remove("text-dark");
+        })
+
+        navIimg.src = "../images/kindpng_3876134.png"
+        navIimg.style.width = "7px"
+
+        inputs.forEach(input => {
+            input.classList.remove("newinputs")
+        })
+
+        document.querySelector("textarea").classList.remove("newtextarea")
+
+        document.querySelector("form button").classList.add("text-white")
+        document.querySelector("form button").classList.remove("text-dark")
         
     }
 };

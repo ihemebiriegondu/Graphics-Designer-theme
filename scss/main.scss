@@ -39,7 +39,7 @@ $input-border-radius: 30px;
 $input-focus-border-color: $primary;
 $input-focus-box-shadow: none;
 
-$btn-close-color: white;
+$btn-close-color: $primary;
 $btn-close-focus-shadow: none;
 $btn-close-opacity: 1;
 $btn-close-hover-opacity: 1;
@@ -66,17 +66,15 @@ body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-    background-color: $dark !important;
+    background-color: $dark  !important;
     color: white !important;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    transition: all 0.5s ease-in-out;
 }
 
 .modebody {
     background-color: white !important;
-    color: $dark !important;
-    transition: all 0.5s ease-in-out;
+    color: $dark  !important;
 }
 
 /*
@@ -98,7 +96,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.diffSpans{
+.diffspan {
     color: white !important;
 }
 
@@ -157,12 +155,12 @@ body::-webkit-scrollbar {
     transition: background-color 0.3s linear;
 }
 
-.newmode-container{
-    background-color: rgba(204, 202, 202, 0.4) !important;
+.newmode-container {
+    background-color: rgba(204, 202, 202, 0.3) !important;
 }
 
-.newmode-container:hover{
-    background-color: rgba($color: rgb(150, 147, 147), $alpha: 0.4) !important;
+.newmode-container:hover {
+    background-color: rgba($color: rgb(150, 147, 147), $alpha: 0.3) !important;
 }
 
 .mode-container div:hover {
@@ -172,7 +170,6 @@ body::-webkit-scrollbar {
 
 .fixed-bottom {
     background-color: rgb(43, 41, 41);
-    transition: all 0.5s ease-in-out;
 }
 
 .img-div {
@@ -200,7 +197,7 @@ body::-webkit-scrollbar {
 }
 
 .nav-i {
-    background-color: rgba(76, 75, 75, 0.3);
+    background-color: rgba(204, 202, 202, 0.3);
     color: white;
 }
 
@@ -212,7 +209,7 @@ body::-webkit-scrollbar {
 
 @keyframes showIBg {
     from {
-        background-color: rgba(76, 75, 75, 0.3);
+        background-color: rgba(204, 202, 202, 0.3);
     }
 
     to {
@@ -222,7 +219,7 @@ body::-webkit-scrollbar {
 
 .hide-i-bg {
     animation: hideIBg 0.4s linear;
-    background-color: rgba(76, 75, 75, 0.3);
+    background-color: rgba(204, 202, 202, 0.3);
 }
 
 @keyframes hideIBg {
@@ -231,7 +228,7 @@ body::-webkit-scrollbar {
     }
 
     to {
-        background-color: rgba(76, 75, 75, 0.3);
+        background-color: rgba(204, 202, 202, 0.3);
     }
 }
 
@@ -276,7 +273,7 @@ body::-webkit-scrollbar {
     width: 13.5rem;
 }
 
-.more a:hover {
+.more a:hover, .more button:hover {
     animation: showMoreBg 0.5s linear;
     background-color: $primary;
     color: white !important;
@@ -338,7 +335,6 @@ footer i:hover {
 .modeh1 {
     text-shadow: 5px 5px 3px white !important;
     color: #535252;
-    transition: all 0.5s ease-in-out;
 }
 
 .personal p {
@@ -479,6 +475,11 @@ footer i:hover {
     height: 70%;
 }
 
+.newmodal-content {
+    background-color: white !important;
+    color: black !important;
+}
+
 .modal-body img,
 .modal-body video,
 .modal iframe {
@@ -505,8 +506,14 @@ footer i:hover {
 
 
 //contact
+input {
+    color: white !important;
+}
+
+
 textarea {
     resize: none !important;
+    color: white;
     border-radius: 30px;
     background-color: rgba(76, 75, 75, 0.6);
     border: none;
@@ -523,17 +530,36 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 40px $input-bg inset !important;
+    -webkit-box-shadow: 0 0 0 40px transparent inset !important;
 }
 
 input:-webkit-autofill {
     -webkit-text-fill-color: white;
 }
 
+.newinputs {
+    background-color: white !important;
+    color: $dark !important;
+    border: 2px solid rgba(76, 75, 75, 0.6) !important;
+}
+
+.newinputs:active, .newinputs:focus {
+    border-color: $primary !important;
+}
+
+.newtextarea {
+    background-color: white !important;
+    color: $dark !important;
+    border: 2px solid rgba(76, 75, 75, 0.6) !important;
+}
+
+.newtextarea:active, .newtextarea:focus {
+    border-color: $primary !important;
+}
+
 
 //blogpage
 #blogpage .card {
-    background-color: rgba(76, 75, 75, 0.5) !important;
     overflow: hidden;
 
     h5 {
@@ -547,12 +573,21 @@ input:-webkit-autofill {
 
         img {
             object-fit: cover;
+            margin-bottom: 0 !important;
             height: 100%;
             transform: scale(1);
             transition: all 0.5s ease-in-out;
         }
     }
 
+}
+
+#blogpage .first-card {
+    background-color: rgba(76, 75, 75, 0.5) !important;
+}
+
+#blogpage .newcard {
+    background-color: #f5f8fc !important;
 }
 
 #blogpage .card:hover {
@@ -567,17 +602,35 @@ input:-webkit-autofill {
     }
 }
 
+#blogpage .newmodal {
+    ::-webkit-scrollbar-track {
+        background: white !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #6e6d6d !important;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #6e6d6d !important;
+    }
+}
+
 #blogpage .modal {
     overflow-x: hidden !important;
+
     ::-webkit-scrollbar {
         width: 10px;
     }
+
     ::-webkit-scrollbar-track {
         background: $light;
     }
+
     ::-webkit-scrollbar-thumb {
         background: #6e6d6d;
     }
+
     ::-webkit-scrollbar-thumb:hover {
         background: #6e6d6d;
     }
@@ -605,6 +658,7 @@ input:-webkit-autofill {
         }
     }
 }
+
 
 
 

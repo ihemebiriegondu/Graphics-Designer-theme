@@ -2,6 +2,7 @@ $primary: orangered;
 $dark: rgb(3, 16, 26);
 $light: rgb(60, 59, 59);
 $white: white;
+$black: black;
 
 $box-shadow: .3rem .3rem 0.6rem rgba(black, .4);
 
@@ -22,6 +23,7 @@ $nav-tabs-link-active-border-color: transparent;
 
 $modal-content-bg: rgb(29, 27, 27);
 $modal-content-border-radius: 20px;
+$modal-backdrop-bg: $black;
 $modal-backdrop-opacity: .9;
 $modal-header-border-color: transparent;
 $modal-header-border-width: 0;
@@ -75,6 +77,24 @@ body {
 .modebody {
     background-color: white !important;
     color: $dark  !important;
+}
+
+#homepagediv {
+    width: 100%;
+}
+
+#homepagediv:before {
+    content: "";
+    overflow-x: hidden;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    background: linear-gradient(orange, red);
+    transform: skew(-15deg);
+    transform-origin: bottom;
 }
 
 /*
@@ -273,7 +293,8 @@ body::-webkit-scrollbar {
     width: 13.5rem;
 }
 
-.more a:hover, .more button:hover {
+.more a:hover,
+.more button:hover {
     animation: showMoreBg 0.5s linear;
     background-color: $primary;
     color: white !important;
@@ -539,22 +560,24 @@ input:-webkit-autofill {
 
 .newinputs {
     background-color: white !important;
-    color: $dark !important;
+    color: $dark  !important;
     border: 2px solid rgba(76, 75, 75, 0.6) !important;
 }
 
-.newinputs:active, .newinputs:focus {
-    border-color: $primary !important;
+.newinputs:active,
+.newinputs:focus {
+    border-color: $primary  !important;
 }
 
 .newtextarea {
     background-color: white !important;
-    color: $dark !important;
+    color: $dark  !important;
     border: 2px solid rgba(76, 75, 75, 0.6) !important;
 }
 
-.newtextarea:active, .newtextarea:focus {
-    border-color: $primary !important;
+.newtextarea:active,
+.newtextarea:focus {
+    border-color: $primary  !important;
 }
 
 
@@ -642,6 +665,10 @@ input:-webkit-autofill {
         .modal-content {
             overflow-x: hidden !important;
 
+            .modal-header {
+                padding: 1rem 1rem !important;
+            }
+
             .modal-body {
                 overflow-x: hidden !important;
 
@@ -692,6 +719,19 @@ input:-webkit-autofill {
         background: black;
         transform: none;
     }*/
+
+    #homepagediv:before {
+        content: "";
+        overflow-x: hidden;
+        position: static;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background: $dark;
+        transform: none;
+    }
 
     .intro-text {
         height: 60%;

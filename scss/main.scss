@@ -838,5 +838,13 @@ input:-webkit-autofill {
     }
 }
 
+@media (max-height: 850px) and (max-width: 1023px) {
+    #homepage {
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+        height: auto;
+    }
+}
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";

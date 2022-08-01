@@ -184,7 +184,17 @@ let addBgToAbout = () => {
 
 
 //about page
+//accordion
 
+const mainAccordions = document.querySelectorAll(".main-accordion");
+const accordionHeaders = document.querySelectorAll(".my-accordion-header");
+
+
+let showAccordionDetails = (event, mainAccordion) => {
+
+    document.getElementById(mainAccordion).classList.toggle("hide")
+    event.currentTarget.classList.toggle("deactivate")
+}
 
 //
 
@@ -211,7 +221,6 @@ const moveCursor = (e) => {
 }
 
 window.addEventListener('mousemove', moveCursor)
-
 
 // dark mode
 const body = document.querySelector("body");
@@ -307,7 +316,7 @@ let changeModeFunction = () => {
             blogCard.classList.add("newcard")
         })
 
-        blogModal.forEach(blogModal =>{
+        blogModal.forEach(blogModal => {
             blogModal.classList.add("newmodal")
         })
 
@@ -331,9 +340,16 @@ let changeModeFunction = () => {
         document.querySelector("textarea").classList.add("newtextarea")
 
         document.querySelector("form button").classList.remove("text-white")
-        document.querySelector("form button").classList.add("text-dark")
-        
-        
+        document.querySelector("form button").classList.add("text-dark");
+
+        document.getElementById("adapt").src = "../images/Skills Logo/icons8-adaptable-64.png"
+        document.getElementById("creative").src = "../images/Skills Logo/icons8-brainstorm-skill-80.png"
+        document.getElementById("adobe").src = "../images/Skills Logo/icons8-adobe-creative-cloud-50.png"
+        document.getElementById("photo").src = "../images/Skills Logo/icons8-photography-64.png"
+        document.getElementById("brand").src = "../images/Skills Logo/icons8-branding-64.png"
+        document.getElementById("it").src = "../images/Skills Logo/icons8-web-design-64.png"
+        document.getElementById("type").src = "../images/Skills Logo/icons8-typography-50.png"
+        document.getElementById("communicate").src = "../images/Skills Logo/icons8-communication-50.png" 
 
     } else {
         modeContainerI.classList.add("bi-brightness-low-fill")
@@ -400,7 +416,7 @@ let changeModeFunction = () => {
             blogCard.classList.remove("newcard")
         })
 
-        blogModal.forEach(blogModal =>{
+        blogModal.forEach(blogModal => {
             blogModal.classList.remove("newmodal")
         })
 
@@ -416,7 +432,7 @@ let changeModeFunction = () => {
 
         navIimg.src = "../images/kindpng_3876134.png"
         navIimg.style.width = "7px"
-
+        
         inputs.forEach(input => {
             input.classList.remove("newinputs")
         })
@@ -425,9 +441,20 @@ let changeModeFunction = () => {
 
         document.querySelector("form button").classList.add("text-white")
         document.querySelector("form button").classList.remove("text-dark")
-        
+
+        document.getElementById("adapt").src = "../images/Skills Logo/icons8-adaptable-64 (1).png"
+        document.getElementById("creative").src = "../images/Skills Logo/icons8-brainstorm-skill-80 (1).png"
+        document.getElementById("adobe").src = "../images/Skills Logo/icons8-adobe-creative-cloud-50 (1).png"
+        document.getElementById("photo").src = "../images/Skills Logo/icons8-photography-64 (1).png"
+        document.getElementById("brand").src = "../images/Skills Logo/icons8-branding-64 (1).png"
+        document.getElementById("it").src = "../images/Skills Logo/icons8-web-design-64 (1).png"
+        document.getElementById("type").src = "../images/Skills Logo/icons8-typography-50 (1).png"
+        document.getElementById("communicate").src = "../images/Skills Logo/icons8-communication-50 (1).png" 
+
     }
 };
 
 
 modeContainer.addEventListener("click", changeModeFunction);
+
+

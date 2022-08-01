@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Graphiz</title>
 
+    <link rel="shortcut icon" href="./images/clipart395435.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/main.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -242,38 +243,89 @@
                         <div class="skills">
                             <h5 class="text-uppercase h4 text-center mb-4">my skills</h5>
                             <div class="col-xl-10 col-lg-11 m-auto pt-5">
-                                <ul class="row row-cols-md-2 row-cols-1">
-                                    <div class="ps-lg-5 ps-md-1 pe-md-5">
-                                        <li class="d-flex justify-content-between align-items-center">
-                                            <p class="fs-5">Adobe CS</p>
-                                            <img src="./images/Skills Logo/pngwing.com (5).png" width="40" alt="">
-                                        </li>
-                                        <hr class="text-primary">
-                                        <li class="d-flex justify-content-between align-items-center">
-                                            <p class="fs-5">Web Design</p>
-                                            <img src="./images/Skills Logo/favpng_web-development-icon-design-graphic-design.png"
-                                                width="40" alt="">
-                                        </li>
-                                        <hr class="text-primary">
-                                        <li class="d-flex justify-content-between align-items-center">
-                                            <p class="fs-5">Typography</p>
-                                            <img src="./images/Skills Logo/typography.png" width="40" alt="">
-                                        </li>
-                                        <hr class="text-primary">
+                                <div class="row row-cols-md-2 g-5">
+                                    <div class="my-accordion">
+                                        <div class="main-accordion accordion-2" id="accordion-2">
+                                            <div class="my-accordion-header"
+                                                onclick="showAccordionDetails(event, 'accordion-2')">
+                                                <i class="bi bi-palette fs-3"></i>
+                                                <h6 class="text-uppercase mb-0 fw-bold">Graphics Designing</h6>
+                                                <i class="bi bi-chevron-up fw-bold"></i>
+                                            </div>
+                                            <div class="my-accordion-body">
+                                                <ul class="">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Adobe CS</p>
+                                                        <img src="./images/Skills Logo/icons8-adobe-creative-cloud-50 (1).png"
+                                                            id="adobe" width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Web Design</p>
+                                                        <img src="./images/Skills Logo/icons8-web-design-64 (1).png" id="it"
+                                                            width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Branding</p>
+                                                        <img src="./images/Skills Logo/icons8-branding-64 (1).png"
+                                                            id="brand" width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Typography</p>
+                                                        <img src="./images/Skills Logo/icons8-typography-50 (1).png" id="type"
+                                                            width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Photography</p>
+                                                        <img src="./images/Skills Logo/icons8-photography-64 (1).png" id="photo" width="40"
+                                                            alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-md-5 pe-lg-5 pe-md-1">
-                                        <li class="d-flex justify-content-between align-items-center">
-                                            <p class="fs-5">Branding</p>
-                                            <img src="./images/Skills Logo/brand-image.png" width="40" alt="">
-                                        </li>
-                                        <hr class="text-primary">
-                                        <li class="d-flex justify-content-between align-items-center">
-                                            <p class="fs-5">Photography</p>
-                                            <img src="./images/Skills Logo/camera-logo-hd-7146.png" width="40" alt="">
-                                        </li>
-                                        <hr class="text-primary">
+                                    <div class="my-accordion">
+                                        <div class="main-accordion accordion-1" id="accordion-1">
+                                            <div class="my-accordion-header"
+                                                onclick="showAccordionDetails(event, 'accordion-1')">
+                                                <i class="bi bi-person-badge fs-3"></i>
+                                                <h6 class="text-uppercase mb-0 fw-bold">Other Skills</h6>
+                                                <i class="bi bi-chevron-up fw-bold"></i>
+                                            </div>
+                                            <div class="my-accordion-body">
+                                                <ul>
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Creativity</p>
+                                                        <img src="./images/Skills Logo/icons8-brainstorm-skill-80 (1).png"
+                                                            id="creative" width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Adaptability</p>
+                                                        <img src="./images/Skills Logo/icons8-adaptable-64 (1).png" id="adapt"
+                                                            width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Time management</p>
+                                                        <i class="bi bi-clock fs-2"></i>
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                    <li class="d-flex justify-content-between align-items-center">
+                                                        <p class="">Communication</p>
+                                                        <img src="./images/Skills Logo/icons8-communication-50 (1).png"
+                                                            id="communicate" width="40" alt="">
+                                                    </li>
+                                                    <hr class="text-primary">
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="experience pb-5">

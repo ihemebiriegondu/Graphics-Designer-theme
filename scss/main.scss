@@ -369,11 +369,6 @@ footer i:hover {
     margin-top: 9rem;
 }
 
-.skills h5,
-.experience h5 {
-    margin-left: -15rem;
-}
-
 .skills ul {
     list-style-type: none;
     padding: 0;
@@ -382,6 +377,41 @@ footer i:hover {
     li {
         padding: 0;
     }
+}
+
+.my-accordion {
+    .accordion-1,
+    .accordion-2 {
+        .my-accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            box-shadow: 1px 1px 4px rgb(176, 175, 175), -1px -1px 4px rgb(176, 175, 175);
+            margin-bottom: 2rem;
+        }
+
+        .my-accordion-header .bi-chevron-up {
+            transition: all 0.2s linear;
+        }
+
+        .my-accordion-header:hover {
+            cursor: pointer;
+        }
+
+        .my-accordion-header.deactivate .bi-chevron-up {
+            transition: all 0.2s linear;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.main-accordion .my-accordion-body {
+    display: block;
+}
+
+.main-accordion.hide .my-accordion-body {
+    display: none;
 }
 
 .hori-line {

@@ -330,7 +330,7 @@ let changeModeFunction = () => {
             contactAi.classList.add("text-dark");
         })
 
-        navIimg.src = "../images/facebook-logo (1).png"
+        navIimg.src = "./images/facebook-logo (1).png"
         navIimg.style.width = "15px"
 
         inputs.forEach(input => {
@@ -342,14 +342,14 @@ let changeModeFunction = () => {
         document.querySelector("form button").classList.remove("text-white")
         document.querySelector("form button").classList.add("text-dark");
 
-        document.getElementById("adapt").src = "../images/Skills Logo/icons8-adaptable-64.png"
-        document.getElementById("creative").src = "../images/Skills Logo/icons8-brainstorm-skill-80.png"
-        document.getElementById("adobe").src = "../images/Skills Logo/icons8-adobe-creative-cloud-50.png"
-        document.getElementById("photo").src = "../images/Skills Logo/icons8-photography-64.png"
-        document.getElementById("brand").src = "../images/Skills Logo/icons8-branding-64.png"
-        document.getElementById("it").src = "../images/Skills Logo/icons8-web-design-64.png"
-        document.getElementById("type").src = "../images/Skills Logo/icons8-typography-50.png"
-        document.getElementById("communicate").src = "../images/Skills Logo/icons8-communication-50.png" 
+        document.getElementById("adapt").src = "././images/Skills Logo/icons8-adaptable-64.png"
+        document.getElementById("creative").src = "././images/Skills Logo/icons8-brainstorm-skill-80.png"
+        document.getElementById("adobe").src = "././images/Skills Logo/icons8-adobe-creative-cloud-50.png"
+        document.getElementById("photo").src = "././images/Skills Logo/icons8-photography-64.png"
+        document.getElementById("brand").src = "././images/Skills Logo/icons8-branding-64.png"
+        document.getElementById("it").src = "././images/Skills Logo/icons8-web-design-64.png"
+        document.getElementById("type").src = "././images/Skills Logo/icons8-typography-50.png"
+        document.getElementById("communicate").src = "././images/Skills Logo/icons8-communication-50.png" 
 
     } else {
         modeContainerI.classList.add("bi-brightness-low-fill")
@@ -430,7 +430,7 @@ let changeModeFunction = () => {
             contactAi.classList.remove("text-dark");
         })
 
-        navIimg.src = "../images/kindpng_3876134.png"
+        navIimg.src = "./images/kindpng_3876134.png"
         navIimg.style.width = "7px"
         
         inputs.forEach(input => {
@@ -442,14 +442,14 @@ let changeModeFunction = () => {
         document.querySelector("form button").classList.add("text-white")
         document.querySelector("form button").classList.remove("text-dark")
 
-        document.getElementById("adapt").src = "../images/Skills Logo/icons8-adaptable-64 (1).png"
-        document.getElementById("creative").src = "../images/Skills Logo/icons8-brainstorm-skill-80 (1).png"
-        document.getElementById("adobe").src = "../images/Skills Logo/icons8-adobe-creative-cloud-50 (1).png"
-        document.getElementById("photo").src = "../images/Skills Logo/icons8-photography-64 (1).png"
-        document.getElementById("brand").src = "../images/Skills Logo/icons8-branding-64 (1).png"
-        document.getElementById("it").src = "../images/Skills Logo/icons8-web-design-64 (1).png"
-        document.getElementById("type").src = "../images/Skills Logo/icons8-typography-50 (1).png"
-        document.getElementById("communicate").src = "../images/Skills Logo/icons8-communication-50 (1).png" 
+        document.getElementById("adapt").src = "././images/Skills Logo/icons8-adaptable-64 (1).png"
+        document.getElementById("creative").src = "././images/Skills Logo/icons8-brainstorm-skill-80 (1).png"
+        document.getElementById("adobe").src = "././images/Skills Logo/icons8-adobe-creative-cloud-50 (1).png"
+        document.getElementById("photo").src = "././images/Skills Logo/icons8-photography-64 (1).png"
+        document.getElementById("brand").src = "././images/Skills Logo/icons8-branding-64 (1).png"
+        document.getElementById("it").src = "././images/Skills Logo/icons8-web-design-64 (1).png"
+        document.getElementById("type").src = "././images/Skills Logo/icons8-typography-50 (1).png"
+        document.getElementById("communicate").src = "././images/Skills Logo/icons8-communication-50 (1).png" 
 
     }
 };

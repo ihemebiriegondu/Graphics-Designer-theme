@@ -1,3 +1,5 @@
+// bootstrap 5 customizations 
+
 $primary: orangered;
 $dark: rgb(3, 16, 26);
 $light: rgb(60, 59, 59);
@@ -58,6 +60,7 @@ $carousel-indicator-active-bg: $primary;
 $carousel-indicator-active-opacity: 1;
 
 
+// main styling
 
 html {
     overflow-x: hidden;
@@ -75,12 +78,18 @@ body {
     scrollbar-width: none;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+// dark mode body styling
 .modebody {
     background-color: white !important;
     color: $dark  !important;
     font-family: 'Roboto', sans-serif !important;
 }
 
+// the slant background color in the home page
 #homepagediv {
     width: 100%;
 }
@@ -97,25 +106,6 @@ body {
     background: linear-gradient(orange, red);
     transform: skew(-15deg);
     transform-origin: bottom;
-}
-
-/*
-body:before {
-    content: "";
-    overflow-x: hidden;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 25%;
-    background: linear-gradient(orange, red);
-    transform: skew(-15deg);
-    transform-origin: bottom;
-}*/
-
-body::-webkit-scrollbar {
-    display: none;
 }
 
 .diffspan {

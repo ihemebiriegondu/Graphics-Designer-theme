@@ -14,7 +14,4 @@
 
 Folder contains already installed bootstrap5 with customization in the main.scss file (scss folder)
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
-
 
